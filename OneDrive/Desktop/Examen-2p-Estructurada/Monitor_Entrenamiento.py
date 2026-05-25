@@ -207,47 +207,47 @@ if __name__ == "__main__":
 
 """
 ==============================================================================
-CUESTIONARIO DE ANÁLISIS DE BIBLIOTECAS (10 PUNTOS) [cite: 108]
+CUESTIONARIO DE ANÁLISIS DE BIBLIOTECAS 
 ==============================================================================
 
-1. Uso de Objetos y Métodos: [cite: 110]
+1. Uso de Objetos y Métodos: 
    Al invocar `datetime.datetime.now()`, el primer `datetime` corresponde al módulo 
    importado, el segundo `datetime` hace referencia a la Clase (objeto plantilla) 
    dentro de ese módulo, y `now()` es el método estático que se está llamando para 
-   capturar la estampa de tiempo actual del sistema. [cite: 110] Esto se relaciona con el concepto 
+   capturar la estampa de tiempo actual del sistema.  Esto se relaciona con el concepto 
    de biblioteca externa o estándar porque encapsula comportamientos complejos y 
    estructuras predefinidas orientadas a objetos, permitiendo al desarrollador interactuar 
-   con recursos nativos del sistema (el reloj interno) de manera directa y estandarizada. [cite: 111]
+   con recursos nativos del sistema (el reloj interno) de manera directa y estandarizada. 
 
-2. Diferenciación Técnica: [cite: 112]
+2. Diferenciación Técnica: 
    Al usar `import math`, se importa el espacio de nombres completo de la biblioteca, por 
    lo que al invocar cualquier función es obligatorio anteponer el prefijo del módulo 
-   (ej. `math.sqrt(x)`). [cite: 112] En cambio, al utilizar `from math import sqrt`, se extrae 
+   (ej. `math.sqrt(x)`).  En cambio, al utilizar `from math import sqrt`, se extrae 
    únicamente dicha función e ingresa directamente en el espacio de nombres local, permitiendo 
-   invocarla de forma directa (`sqrt(x)`) sin prefijos. [cite: 112] Esto mejora la legibilidad, pero aumenta 
+   invocarla de forma directa (`sqrt(x)`) sin prefijos. Esto mejora la legibilidad, pero aumenta 
    el riesgo de colisión de nombres si existieran funciones propias llamadas de la misma forma.
 
-3. Flujo y Lógica: [cite: 113]
+3. Flujo y Lógica: 
    La secuencia lógica consiste en declarar dos listas de colección vacías (`valores_reales` 
    y `valores_predichos`) dentro del simulador. En cada iteración del bucle, la función 
    `random.uniform` genera un valor float para simular el valor real del entorno y otro con una 
    pequeña desviación aleatoria para simular la predicción. Ambos se guardan ordenadamente con `.append()`. 
    Al finalizar el ciclo (o al detectar un corte crítico), estas listas son enviadas como 
    argumentos posicionales a la función independiente `calcular_rmse(predicciones, reales)`, 
-   donde se recorren de forma síncrona mediante sus índices para aplicar las ecuaciones de `math`. [cite: 113]
+   donde se recorren de forma síncrona mediante sus índices para aplicar las ecuaciones de `math`. 
 
-4. Mapeo de Tipos de Datos: [cite: 114]
+4. Mapeo de Tipos de Datos: 
    Se utilizaron estructuras complejas de tipo colecciones ordenadas (Listas `[]`) para registrar 
    las pérdidas y las latencias por iteración, además de otra lista de strings para almacenar 
-   los eventos de log posibles. [cite: 41, 114] Se eligieron estas estructuras porque el análisis de rendimiento 
-   requiere evaluar un histórico acumulado a lo largo de múltiples iteraciones individuales. [cite: 114] 
+   los eventos de log posibles.  Se eligieron estas estructuras porque el análisis de rendimiento 
+   requiere evaluar un histórico acumulado a lo largo de múltiples iteraciones individuales.  
    Las variables simples se sobreescribirían en cada ciclo guardando solo el último estado, 
-   mientras que las colecciones permiten la persistencia de datos históricos para operaciones agregadas. [cite: 114]
+   mientras que las colecciones permiten la persistencia de datos históricos para operaciones agregadas. 
 
-5. Autoevaluación de Abstracción: [cite: 115]
+5. Autoevaluación de Abstracción: 
    No, en ningún momento se tuvo que programar la fórmula matemática de la desviación estándar 
-   ni sus bucles internos de sumatorias de residuos. [cite: 115] Esto conecta de forma directa con el 
+   ni sus bucles internos de sumatorias de residuos.  Esto conecta de forma directa con el 
    concepto de "Abstracción" visto en clase, el cual consiste en aislar la complejidad interna 
-   del algoritmo matemático y proveer al desarrollador una interfaz limpia y simplificada (`statistics.stdev()`). [cite: 116] 
-   Consumimos el "qué hace" el bloque de código sin necesidad de programar o conocer el "cómo lo realiza". [cite: 116]
+   del algoritmo matemático y proveer al desarrollador una interfaz limpia y simplificada (`statistics.stdev()`).  
+   Consumimos el "qué hace" el bloque de código sin necesidad de programar o conocer el "cómo lo realiza". 
 """
